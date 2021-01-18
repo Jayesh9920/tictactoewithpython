@@ -1,0 +1,572 @@
+from termcolor import colored
+import time
+import random
+
+print(colored("************************************\n"
+              "**", "red") + colored("  Welcome to TIC TAC TOE Game!  ", "magenta") + colored("**\n"
+                                                                                              "**", "red") + colored(
+    "   Developed by JD Developers   ", "cyan") + colored("**\n"
+                                                          "************************************\n", "red"))
+
+print("X", "|", "O", "|", " ")
+print("---------")
+print("O", "|", "X", "|", " ")
+print("---------")
+print("O", "|", " ", "|", "X")
+
+per_1 = input(colored("Enter Player 1 name: ", "magenta"))
+per_2 = "Computer"
+
+per_1_input = per_1 + ", Enter the number: "
+
+x = 1
+y = 2
+choose = [1,2,3,4,5,6,7,8,9]
+
+board = {
+    1: " ",
+    2: " ",
+    3: " ",
+    4: " ",
+    5: " ",
+    6: " ",
+    7: " ",
+    8: " ",
+    9: " ",
+}  # board
+
+while True:
+    try:
+        boar = board
+        a = boar.get(1)
+        b = boar.get(2)
+        c = boar.get(3)
+        d = boar.get(4)
+        e = boar.get(5)
+        f = boar.get(6)
+        g = boar.get(7)
+        h = boar.get(8)
+        i = boar.get(9)
+        if a == None:
+            a = " "
+        if b == None:
+            b = " "
+        if c == None:
+            c = " "
+        if d == None:
+            d = " "
+        if e == None:
+            e = " "
+        if f == None:
+            f = " "
+        if g == None:
+            g = " "
+        if h == None:
+            h = " "
+        if i == None:
+            i = " "
+
+        print(g, "|", h, "|", i)
+        print("---------")
+        print(d, "|", e, "|", f)
+        print("---------")
+        print(a, "|", b, "|", c)
+
+        if (a == b == c != " ") or (d == e == f != " ") or (g == h == i != " ") or (a == e == i != " ") or (
+                c == e == g != " ") or (a == d == g != " ") or (b == e == h != " ") or (c == f == i != " "):
+            if (x < y):
+                won_2 = per_2 + " won the match."
+                print(colored(won_2, "magenta"))
+                ask = input(colored("Do you want to play again?(y/n) ", "green"))
+                if (ask.startswith("y")):
+                    choose = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                    board = {
+                        1: " ",
+                        2: " ",
+                        3: " ",
+                        4: " ",
+                        5: " ",
+                        6: " ",
+                        7: " ",
+                        8: " ",
+                        9: " ",
+                    }
+                    boar = board
+
+                    a = boar.get(1)
+                    b = boar.get(2)
+                    c = boar.get(3)
+                    d = boar.get(4)
+                    e = boar.get(5)
+                    f = boar.get(6)
+                    g = boar.get(7)
+                    h = boar.get(8)
+                    i = boar.get(9)
+                    if a == None:
+                        a = " "
+                    if b == None:
+                        b = " "
+                    if c == None:
+                        c = " "
+                    if d == None:
+                        d = " "
+                    if e == None:
+                        e = " "
+                    if f == None:
+                        f = " "
+                    if g == None:
+                        g = " "
+                    if h == None:
+                        h = " "
+                    if i == None:
+                        i = " "
+
+                    print(g, "|", h, "|", i)
+                    print("---------")
+                    print(d, "|", e, "|", f)
+                    print("---------")
+                    print(a, "|", b, "|", c)
+
+                else:
+                    ending = "Bye Bye\n"
+                    for l in ending:
+                        print(l, end="")
+                        time.sleep(.25)
+
+                    exit()
+
+            # player 2 wins
+            elif (x > y):
+                won_1 = per_1 + " won the match."
+                print(colored(won_1, "magenta"))
+                ask = input(colored("Do you want to play again?(y/n) ", "green"))
+                if (ask.startswith("y")):
+
+                    choose = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                    board = {
+                        1: " ",
+                        2: " ",
+                        3: " ",
+                        4: " ",
+                        5: " ",
+                        6: " ",
+                        7: " ",
+                        8: " ",
+                        9: " ",
+                    }
+
+                    boar = board
+
+                    a = boar.get(1)
+                    b = boar.get(2)
+                    c = boar.get(3)
+                    d = boar.get(4)
+                    e = boar.get(5)
+                    f = boar.get(6)
+                    g = boar.get(7)
+                    h = boar.get(8)
+                    i = boar.get(9)
+                    if a == None:
+                        a = " "
+                    if b == None:
+                        b = " "
+                    if c == None:
+                        c = " "
+                    if d == None:
+                        d = " "
+                    if e == None:
+                        e = " "
+                    if f == None:
+                        f = " "
+                    if g == None:
+                        g = " "
+                    if h == None:
+                        h = " "
+                    if i == None:
+                        i = " "
+
+                    print(g, "|", h, "|", i)
+                    print("---------")
+                    print(d, "|", e, "|", f)
+                    print("---------")
+                    print(a, "|", b, "|", c)
+
+                else:
+                    ending = "Bye Bye"
+                    for l in ending:
+                        print(l, end="")
+                        time.sleep(.25)
+                    exit()
+
+        # player 1 wins
+        elif (a != " ") and (b != " ") and (c != " ") and (d != " ") and (e != " ") and (f != " ") and (g != " ") and (
+                h != " ") and (i != " "):
+            print(colored("Tie.", "magenta"))
+            ask = input(colored("Do you want to play again?(y/n) ", "green"))
+            if (ask.startswith("y")):
+                choose = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                board = {
+                    1: " ",
+                    2: " ",
+                    3: " ",
+                    4: " ",
+                    5: " ",
+                    6: " ",
+                    7: " ",
+                    8: " ",
+                    9: " ",
+                }
+                boar = board
+
+                a = boar.get(1)
+                b = boar.get(2)
+                c = boar.get(3)
+                d = boar.get(4)
+                e = boar.get(5)
+                f = boar.get(6)
+                g = boar.get(7)
+                h = boar.get(8)
+                i = boar.get(9)
+                if a == None:
+                    a = " "
+                if b == None:
+                    b = " "
+                if c == None:
+                    c = " "
+                if d == None:
+                    d = " "
+                if e == None:
+                    e = " "
+                if f == None:
+                    f = " "
+                if g == None:
+                    g = " "
+                if h == None:
+                    h = " "
+                if i == None:
+                    i = " "
+
+                print(g, "|", h, "|", i)
+                print("---------")
+                print(d, "|", e, "|", f)
+                print("---------")
+                print(a, "|", b, "|", c)
+
+            else:
+                ending = "Bye Bye\n"
+                for l in ending:
+                    print(l, end="")
+                    time.sleep(.25)
+
+                exit()
+#tie
+
+        if (x < y):
+            p = int(input(colored(per_1_input, "cyan")))
+            if (p > 9) or (p < 1):
+                print(colored("You have put incorrect value.", "red"))
+            else:
+                k = board.get(p)
+                if k != " ":
+                    print(colored("This block is already filled. Enter the other number."))
+                else:
+                    board.pop(p)
+                    board[p] = "X"
+                    x = x + 2
+                    choose.remove(p)
+        # chance of first person
+
+        else:
+            print(colored("Computer's move:","cyan"))
+            if(a==b=="O")and(c==" "):
+                board.pop(3)
+                board[3] = "O"
+                y = y + 2
+                choose.remove(3)
+            elif (b == c == "O") and (a == " "):
+                board.pop(1)
+                board[1] = "O"
+                y = y + 2
+                choose.remove(1)
+            elif (a == c == "O") and (b == " "):
+                board.pop(2)
+                board[2] = "O"
+                y = y + 2
+                choose.remove(2)
+
+            elif (d == e == "O") and (f == " "):
+                board.pop(6)
+                board[6] = "O"
+                y = y + 2
+                choose.remove(6)
+            elif (d == f == "O") and (e == " "):
+                board.pop(5)
+                board[5] = "O"
+                y = y + 2
+                choose.remove(5)
+            elif (e == f == "O") and (d == " "):
+                board.pop(4)
+                board[4] = "O"
+                y = y + 2
+                choose.remove(4)
+
+
+            elif (g == h == "O") and (i == " "):
+                board.pop(9)
+                board[9] = "O"
+                y = y + 2
+                choose.remove(9)
+            elif (g == i == "O") and (h == " "):
+                board.pop(8)
+                board[8] = "O"
+                y = y + 2
+                choose.remove(8)
+            elif (h == i == "O") and (g == " "):
+                board.pop(7)
+                board[7] = "O"
+                y = y + 2
+                choose.remove(7)
+
+
+            elif (a == d == "O") and (g == " "):
+                board.pop(7)
+                board[7] = "O"
+                y = y + 2
+                choose.remove(7)
+            elif (g == d == "O") and (a == " "):
+                board.pop(1)
+                board[1] = "O"
+                y = y + 2
+                choose.remove(1)
+            elif (g == a == "O") and (d == " "):
+                board.pop(4)
+                board[4] = "O"
+                y = y + 2
+                choose.remove(4)
+
+
+            elif (b == e == "O") and (h == " "):
+                board.pop(8)
+                board[8] = "O"
+                y = y + 2
+                choose.remove(8)
+            elif (b == h == "O") and (e == " "):
+                board.pop(5)
+                board[5] = "O"
+                y = y + 2
+                choose.remove(5)
+            elif (h == e == "O") and (b == " "):
+                board.pop(2)
+                board[2] = "O"
+                y = y + 2
+                choose.remove(2)
+
+            elif (c == f == "O") and (i == " "):
+                board.pop(9)
+                board[9] = "O"
+                y = y + 2
+                choose.remove(9)
+            elif (c == i == "O") and (f == " "):
+                board.pop(6)
+                board[6] = "O"
+                y = y + 2
+                choose.remove(6)
+            elif (f == i == "O") and (c == " "):
+                board.pop(3)
+                board[3] = "O"
+                y = y + 2
+                choose.remove(3)
+
+
+            elif (a==e == "O") and (i == " "):
+                board.pop(9)
+                board[9] = "O"
+                y = y + 2
+                choose.remove(9)
+            elif (a == i == "O") and (e == " "):
+                board.pop(5)
+                board[5] = "O"
+                y = y + 2
+                choose.remove(5)
+            elif (e == i == "O") and (a == " "):
+                board.pop(1)
+                board[1] = "O"
+                y = y + 2
+                choose.remove(1)
+
+
+            elif (c == e == "O") and (g  == " "):
+                board.pop(7)
+                board[7] = "O"
+                y = y + 2
+                choose.remove(7)
+            elif (g == e == "O") and (c == " "):
+                board.pop(3)
+                board[3] = "O"
+                y = y + 2
+                choose.remove(3)
+            elif (c == g == "O") and (e == " "):
+                board.pop(5)
+                board[5] = "O"
+                y = y + 2
+                choose.remove(5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            elif (a == b == "X") and (c == " "):
+                    board.pop(3)
+                    board[3] = "O"
+                    y = y + 2
+                    choose.remove(3)
+            elif (b == c == "X") and (a == " "):
+                    board.pop(1)
+                    board[1] = "O"
+                    y = y + 2
+                    choose.remove(1)
+            elif (a == c == "X") and (b == " "):
+                    board.pop(2)
+                    board[2] = "O"
+                    y = y + 2
+                    choose.remove(2)
+
+            elif (d == e == "X") and (f == " "):
+                    board.pop(6)
+                    board[6] = "O"
+                    y = y + 2
+                    choose.remove(6)
+            elif (d == f == "X") and (e == " "):
+                    board.pop(5)
+                    board[5] = "O"
+                    y = y + 2
+                    choose.remove(5)
+            elif (e == f == "X") and (d == " "):
+                    board.pop(4)
+                    board[4] = "O"
+                    y = y + 2
+                    choose.remove(4)
+
+
+            elif (g == h == "X") and (i == " "):
+                    board.pop(9)
+                    board[9] = "O"
+                    y = y + 2
+                    choose.remove(9)
+            elif (g == i == "X") and (h == " "):
+                    board.pop(8)
+                    board[8] = "O"
+                    y = y + 2
+                    choose.remove(8)
+            elif (h == i == "X") and (g == " "):
+                    board.pop(7)
+                    board[7] = "O"
+                    y = y + 2
+                    choose.remove(7)
+
+
+            elif (a == d == "X") and (g == " "):
+                    board.pop(7)
+                    board[7] = "O"
+                    y = y + 2
+                    choose.remove(7)
+            elif (g == d == "X") and (a == " "):
+                    board.pop(1)
+                    board[1] = "O"
+                    y = y + 2
+                    choose.remove(1)
+            elif (g == a == "X") and (d == " "):
+                    board.pop(4)
+                    board[4] = "O"
+                    y = y + 2
+                    choose.remove(4)
+
+
+            elif (b == e == "X") and (h == " "):
+                    board.pop(8)
+                    board[8] = "O"
+                    y = y + 2
+                    choose.remove(8)
+            elif (b == h == "X") and (e == " "):
+                    board.pop(5)
+                    board[5] = "O"
+                    y = y + 2
+                    choose.remove(5)
+            elif (h == e == "X") and (b == " "):
+                    board.pop(2)
+                    board[2] = "O"
+                    y = y + 2
+                    choose.remove(2)
+
+            elif (c == f == "X") and (i == " "):
+                    board.pop(9)
+                    board[9] = "O"
+                    y = y + 2
+                    choose.remove(9)
+            elif (c == i == "X") and (f == " "):
+                    board.pop(6)
+                    board[6] = "O"
+                    y = y + 2
+                    choose.remove(6)
+            elif (f == i == "X") and (c == " "):
+                    board.pop(3)
+                    board[3] = "O"
+                    y = y + 2
+                    choose.remove(3)
+
+
+            elif (a == e == "X") and (i == " "):
+                    board.pop(9)
+                    board[9] = "O"
+                    y = y + 2
+                    choose.remove(9)
+            elif (a == i == "X") and (e == " "):
+                    board.pop(5)
+                    board[5] = "O"
+                    y = y + 2
+                    choose.remove(5)
+            elif (e == i == "X") and (a == " "):
+                    board.pop(1)
+                    board[1] = "O"
+                    y = y + 2
+                    choose.remove(1)
+
+
+            elif (c == e == "X") and (g == " "):
+                    board.pop(7)
+                    board[7] = "O"
+                    y = y + 2
+                    choose.remove(7)
+            elif (g == e == "X") and (c == " "):
+                    board.pop(3)
+                    board[3] = "O"
+                    y = y + 2
+                    choose.remove(3)
+            elif (c == g == "X") and (e == " "):
+                    board.pop(5)
+                    board[5] = "O"
+                    y = y + 2
+                    choose.remove(5)
+            else:
+                    v = random.choice(choose)
+                    board.pop(v)
+                    board[v] = "O"
+                    y = y + 2
+                    choose.remove(v)
+
+
+    # chance of second person
+
+    except ValueError:
+        print(colored("Please input correct number.", "red"))
